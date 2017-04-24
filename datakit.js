@@ -62,7 +62,7 @@ module.exports = function(RED) {
       break;
     case 'seq':
       var value = msg.payload.split(",");
-      msg.payload = datakit[func](value[0],value[1]);
+      msg.payload = datakit[func](value[0],value[1],value[2]);
       break;
     case 'rep':
       var value = msg.payload.split(",");
@@ -90,7 +90,7 @@ module.exports = function(RED) {
       break;
     case 'norm':
       var value = msg.payload.split(",");
-      msg.payload = datakit[func](value[0],value[1]);
+      msg.payload = datakit[func](value[0],value[1],value[2]);
       break;
     case 'uni':
       var value = parseInt(msg.payload);
