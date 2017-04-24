@@ -42,22 +42,63 @@ module.exports = function(RED) {
 		    break;
 
     case 'mean':
+      msg.payload = datakit[func](data);
+      break;
     case 'sd':
+      msg.payload = datakit[func](data);
+      break;
     case 'vari':
+      msg.payload = datakit[func](data);
+      break;
     case 'cov':
+      var x = msg.payload.x;
+      var y = msg.payload.y;
+      msg.payload = datakit[func](x,y);
+      break;
     case 'reg':
+      var x = msg.payload.x;
+      var y = msg.payload.y;
+      msg.payload = datakit[func](x,y);
+      break;
     case 'seq':
+      var value = msg.payload.split(",");
+      msg.payload = datakit[func](value);
+      break;
     case 'rep':
+      var value = msg.payload.split(",");
+      msg.payload = datakit[func](value);
+      break;
     case 'isclose':
+      var value = msg.payload.split(",");
+      msg.payload = datakit[func](value);
+      break;
     case 'sum':
+      msg.payload = datakit[func](data);
+      break;
     case 'prod':
+      msg.payload = datakit[func](data);
+      break;
     case 'min':
+      msg.payload = datakit[func](data);
+      break;
     case 'max':
       msg.payload = datakit[func](data);
+      break;
     case 'exp':
+      var value = msg.payload.split(",");
+      msg.payload = datakit[func](value);
+      break;
     case 'norm':
+      var value = msg.payload.split(",");
+      msg.payload = datakit[func](value);
+      break;
     case 'uni':
-
+      var value = parseInt(msg.payload);
+      if (isNaN(value)) {
+          node.warn("Non-numeric data received: " + msg.payload);
+      } else {
+          msg.payload = datakit[func](value);
+     break;
 //		case 'probit':
 
 //                    var value = parseFloat(msg.payload);
