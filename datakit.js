@@ -62,15 +62,15 @@ module.exports = function(RED) {
       break;
     case 'seq':
       var value = msg.payload.split(",");
-      msg.payload = datakit[func](value);
+      msg.payload = datakit[func](value[0],value[1]);
       break;
     case 'rep':
       var value = msg.payload.split(",");
-      msg.payload = datakit[func](value);
+      msg.payload = datakit[func](value[0],value[1]);
       break;
     case 'isclose':
       var value = msg.payload.split(",");
-      msg.payload = datakit[func](value);
+      msg.payload = datakit[func](value[0],value[1]);
       break;
     case 'sum':
       msg.payload = datakit[func](data);
@@ -86,18 +86,18 @@ module.exports = function(RED) {
       break;
     case 'exp':
       var value = msg.payload.split(",");
-      msg.payload = datakit[func](value);
+      msg.payload = datakit[func](value[0],value[1]);
       break;
     case 'norm':
       var value = msg.payload.split(",");
-      msg.payload = datakit[func](value);
+      msg.payload = datakit[func](value[0],value[1]);
       break;
     case 'uni':
       var value = parseInt(msg.payload);
       if (isNaN(value)) {
           node.warn("Non-numeric data received: " + msg.payload);
       } else {
-          msg.payload = datakit[func](value);
+          msg.payload = datakit[func](value[0],value[1]);
       }
      break;
      default:
