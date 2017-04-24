@@ -98,19 +98,9 @@ module.exports = function(RED) {
           node.warn("Non-numeric data received: " + msg.payload);
       } else {
           msg.payload = datakit[func](value);
+      }
      break;
-//		case 'probit':
-
-//                    var value = parseFloat(msg.payload);
-//                    if (isNaN(value)) {
-//                        node.warn("Non-numeric data received: " + msg.payload);
-//			return null;
-//                    } else {
-//			msg.payload = statistics[func](value);
-//                    }
-//		    break;
-
-	        default:
+     default:
 		    var value = parseFloat(msg.payload);
             	    if (isNaN(value)) {
                         node.warn("Non-numeric data received: " + msg.payload);
