@@ -52,7 +52,7 @@ module.exports = function(RED) {
       break;
     case 'cov':
       var a = msg.payload[0];
-      var b = msg.payload[1]);
+      var b = msg.payload[1];
       msg.payload = datakit[func](a,b);
       break;
     case 'reg':
