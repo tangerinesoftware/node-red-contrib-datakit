@@ -1,0 +1,30 @@
+{
+  "name": "node-red-contrib-datakitjs",
+  "version": "0.1.0",
+  "description": "A node-red node to perform simple data analysis on a flow.",
+  "dependencies": {
+    "datakitjs": "0.1.4"
+  },
+  "author": {
+    "name": "Nick Pye",
+    "email": "nick.pye@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node-red",
+    "datakitjs"
+  ],
+  "bugs": {
+    "url": "https://github.com/tangerinesoftware/node-red-contrib-datakitjs/issues"
+  },
+  "homepage": "https://github.com/tangerinesoftware/node-red-contrib-datakitjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tangerinesoftware/node-red-contrib-datakitjs.git"
+  },
+  "node-red": {
+    "nodes": {
+      "datakitjs": "datakit.js"
+    }
+  }
+}

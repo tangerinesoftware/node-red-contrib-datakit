@@ -1,0 +1,59 @@
+<script type="text/javascript">
+    RED.nodes.registerType('datakit',{
+        category: 'function',
+        color: '#ffa500',
+        defaults: {
+            name: {value:""},
+	    stripFunction: {value:false}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "function.png",
+        label: function() {
+            return this.name||"datakit";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="datakit">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-stripFunction"><i class="icon-tag"></i> Strip function from topic</label>
+        <input type="checkbox" id="node-input-stripFunction" placeholder="Strip">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="datakit">
+    <p>A lightweight library/framework for data analysis. This is a wrapper around the <a href="https://www.npmjs.com/package/datakitjs">datakit</a> library.</p>
+    <p>Normally, the value of msg.payload is saved into the data set.  When a message with a topic that ends in a datakitjs function name is received, that datakitjs function is executed and output as the msg.payload. For example, a message with the topic <i>data/mean</i> would output the mean of the data received so far. Optionally, the function name can be stripped from the topic. For datakitjs functions that require a parameter, the parameter is passed in using msg.payload.</p>
+    <p>The functions in the datakit library that are supported are:
+	<ul>
+  <li>Statistical Methods</li>
+  <li>mean</li>
+  <li>sd</li>
+  <li>vari</li>
+  <li>cov</li>
+  <li>reg</li>
+  <li>Convenience Methods</li>
+      <li>seq</li>
+      <li>rep</li>
+      <li>isclose</li>
+      <li>sum</li>
+      <li>prod</li>
+      <li>min</li>
+      <li>max</li>
+  <li>Random Numbers</li>
+      <li>exp</li>
+      <li>norm</li>
+      <li>uni</li>
+	</ul>
+    In addition, two other functions are implemented:
+	<ul>
+		<li>size - returns the size of the data set</li>
+		<li>clear - clears the data set</li>
+	</ul>
+    </p>
+</script>
