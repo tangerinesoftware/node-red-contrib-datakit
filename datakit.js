@@ -53,6 +53,7 @@ module.exports = function(RED) {
     case 'prod':
     case 'min':
     case 'max':
+      msg.payload = datakit[func](data);
     case 'exp':
     case 'norm':
     case 'uni':
