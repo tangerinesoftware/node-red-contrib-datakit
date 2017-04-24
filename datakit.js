@@ -51,13 +51,13 @@ module.exports = function(RED) {
       msg.payload = datakit[func](data);
       break;
     case 'cov':
-      var x = msg.payload.x;
-      var y = msg.payload.y;
+      var x = msg.payload.a;
+      var y = msg.payload.b;
       msg.payload = datakit[func](x,y);
       break;
     case 'reg':
-      var x = msg.payload.x;
-      var y = msg.payload.y;
+      var x = msg.payload.a;
+      var y = msg.payload.b;
       msg.payload = datakit[func](x,y);
       break;
     case 'seq':
